@@ -1,0 +1,12 @@
+{
+  "name": "cineverse",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm install --prefix server && npm install --prefix client && npm run seed --prefix server",
+    "dev": "concurrently -k -n API,WEB -c blue,green \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "test": "npm test --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
